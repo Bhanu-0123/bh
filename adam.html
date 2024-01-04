@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User and Admin Buttons</title>
+    <title>Admin Panel</title>
     <style>
         body {
             display: flex;
@@ -13,12 +13,16 @@
             margin: 0;
         }
 
-        .button-container {
+        .admin-panel {
             text-align: center;
             border: 1px solid #ccc;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            margin-top: 20px;
         }
 
         .button {
@@ -28,32 +32,39 @@
             cursor: pointer;
         }
 
-        .user-button {
+        .login-button {
             background-color: #3498db;
             color: #fff;
         }
 
-        .admin-button {
-            background-color: #e74c3c;
+        .signup-button {
+            background-color: #2ecc71;
             color: #fff;
         }
 
-        .heading {
-            font-size: 24px;
-            margin-bottom: 20px;
+        .goback-button {
+            background-color: #e74c3c;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <h2 class="heading">Welcome! Choose Your Role</h2>
-        <button class="button user-button" onclick="redirectTo('main.html')">User</button>
-        <button class="button admin-button" onclick="redirectTo('adam.html')">Admin</button>
+    <div class="admin-panel">
+        <h2>Admin Panel</h2>
+        <div class="button-container">
+            <button class="button login-button" onclick="redirectTo('adloding.html')">Admin Login</button>
+            <button class="button signup-button" onclick="redirectTo('admindex.html')">Admin Signup</button>
+            <button class="button goback-button" onclick="redirectTo('index.html')">Go Back</button>
+        </div>
     </div>
 
     <script>
         function redirectTo(page) {
             window.location.href = page;
+        }
+
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
